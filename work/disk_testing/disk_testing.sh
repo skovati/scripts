@@ -4,12 +4,13 @@ ans=1
 
 while [ $ans -ne 0 ]; do
 
-echo "What would you like to do? (0 to exit):
+echo "Welcome to Luke's Disk Testing Script! What would you like to do? (0 to exit):
 1: Initialize disks in raid0
 2: Run a health check
 3: Run short tests
 4: Run extended test 
-5: Cancel current running tests"
+5: Show current testing status
+6: Cancel current running tests"
 read ans
 
 case $ans in
@@ -31,8 +32,12 @@ echo "You have chosen to run extended tests"
 ;;
 5)
 echo "You have chosen to cancel all running tests"
-./cancel_test.sh
+./test_status.sh
+;;
+6)
+echo "You have chosen to show current testing status"
 ;;
 esac
+echo "Exiting... Come again soon!"
 done
 
